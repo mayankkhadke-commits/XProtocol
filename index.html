@@ -52,7 +52,7 @@
 body{background:var(--bg);color:var(--text);min-height:100vh;transition:background 0.2s,color 0.2s}
 
 /* ── NAV ── */
-.top-nav{position:sticky;top:0;background:var(--bg);z-index:100;border-bottom:1px solid var(--border);transition:background 0.2s,border-color 0.2s}
+.top-nav{position:sticky;top:0;background:var(--bg);z-index:300;border-bottom:1px solid var(--border);transition:background 0.2s,border-color 0.2s}
 .top-nav-row1{position:relative;display:flex;align-items:center;justify-content:center;padding:0.7rem 4rem 0.6rem}
 .top-nav-row2{display:flex;align-items:center;justify-content:center;padding:0 1rem 0.65rem}
 .nav-tabs{display:flex;background:var(--card);border:1px solid var(--border);border-radius:var(--pill-radius);overflow:hidden}
@@ -219,7 +219,7 @@ body{background:var(--bg);color:var(--text);min-height:100vh;transition:backgrou
 .j-img-thumb-del{position:absolute;top:2px;right:2px;width:16px;height:16px;border-radius:50%;background:rgba(0,0,0,0.6);color:#fff;border:none;font-size:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
 .j-img-count{font-family:var(--font-mono);font-size:10px;color:var(--muted);padding:2px 7px;border:1px solid var(--border);border-radius:var(--pill-radius);background:var(--bg)}
 /* Fullscreen journal entry */
-.j-fullscreen-bg{display:none;position:fixed;inset:0;background:var(--bg);z-index:800;overflow-y:auto;padding:2rem 1rem 3rem}
+.j-fullscreen-bg{display:none;position:fixed;inset:0;background:var(--bg);z-index:200;overflow-y:auto;padding:2rem 1rem 3rem}
 .j-fullscreen-bg.open{display:block}
 .j-fullscreen-inner{max-width:680px;margin:0 auto}
 .j-fullscreen-close{font-family:var(--font-mono);font-size:11px;padding:6px 14px;border:1px solid var(--border);border-radius:var(--pill-radius);background:transparent;color:var(--muted);cursor:pointer;margin-bottom:1.2rem;transition:all 0.15s}
@@ -323,7 +323,7 @@ body{background:var(--bg);color:var(--text);min-height:100vh;transition:backgrou
 /* pr-history-val defined in pr-val-input block */
 .pr-history-badge{font-size:10px;padding:1px 6px;border-radius:10px;background:var(--w-green-bg);color:var(--w-green);border:0.5px solid var(--w-border);margin-left:auto}
 /* Modal overlay */
-.pr-modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:500;align-items:center;justify-content:center}
+.pr-modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:200;align-items:center;justify-content:center}
 .pr-modal-bg.open{display:flex}
 .pr-modal{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:20px;width:min(420px,92vw);max-height:90vh;overflow-y:auto}
 .pr-modal h3{font-family:var(--font-head);font-size:17px;font-weight:600;color:var(--text);margin-bottom:4px}
@@ -394,7 +394,7 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
 .goal-progress-entry-body{font-family:var(--font-mono);font-size:12px;color:var(--muted);line-height:1.6;white-space:pre-wrap;word-break:break-word}
 .goal-empty{text-align:center;padding:2.5rem 1rem;font-family:var(--font-mono);font-size:13px;color:var(--muted)}
 /* Goal modal */
-.goal-modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:600;align-items:center;justify-content:center}
+.goal-modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:200;align-items:center;justify-content:center}
 .goal-modal-bg.open{display:flex}
 .goal-modal{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:20px;width:min(440px,92vw);max-height:88vh;overflow-y:auto}
 .goal-modal h3{font-family:var(--font-head);font-size:17px;font-weight:600;color:var(--text);margin-bottom:14px}
@@ -425,14 +425,69 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
 .cardio-val{color:var(--w-text);font-weight:500}
 .cardio-del{font-size:10px;padding:2px 7px;border:0.5px solid var(--w-border);border-radius:10px;background:transparent;color:var(--w-text3);cursor:pointer;margin-left:auto;transition:all 0.15s}
 .cardio-del:hover{border-color:var(--w-coral);color:var(--w-coral)}
-.cardio-modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:600;align-items:center;justify-content:center}
+.cardio-modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:200;align-items:center;justify-content:center}
 .cardio-modal-bg.open{display:flex}
 .cardio-modal{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:20px;width:min(380px,92vw)}
 .cardio-modal h3{font-family:var(--font-head);font-size:17px;font-weight:600;color:var(--text);margin-bottom:14px}
 /* PR standalone button */
 .pr-standalone-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:14px;background:var(--w-amber-bg);border:1px solid var(--w-border);border-radius:10px;font-family:'Courier New',monospace;font-size:14px;color:var(--w-amber);cursor:pointer;transition:all 0.15s;margin-bottom:1.5rem;letter-spacing:0.04em}
 .pr-standalone-btn:hover{background:var(--w-amber);color:#fff}
-/* ══ DASHBOARD ══ */
+/* Sleep score */
+.sleep-score-wrap{display:flex;align-items:center;gap:8px;margin-top:8px}
+.sleep-score-label{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap}
+.sleep-score-input{width:64px;font-family:var(--font-mono);font-size:14px;font-weight:600;padding:4px 8px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);outline:none;text-align:center;transition:border-color 0.15s}
+.sleep-score-input:focus{border-color:var(--text)}
+.sleep-score-badge{font-family:var(--font-mono);font-size:12px;font-weight:600;padding:3px 10px;border-radius:var(--pill-radius);background:var(--blue-bg);color:var(--blue)}
+/* Graph view */
+.prog-graph-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:1rem;overflow:hidden}
+.prog-graph-canvas{width:100%;height:160px;display:block}
+.prog-view-toggle{display:flex;background:var(--card);border:1px solid var(--border);border-radius:var(--pill-radius);overflow:hidden;margin-bottom:1rem;width:fit-content}
+.prog-view-btn{font-family:var(--font-mono);font-size:11px;padding:5px 14px;border:none;cursor:pointer;color:var(--muted);background:transparent;transition:all 0.15s}
+.prog-view-btn.active{background:var(--text);color:var(--bg)}
+/* Note expand modal */
+.note-expand-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;align-items:center;justify-content:center}
+.note-expand-bg.open{display:flex}
+.note-expand-modal{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:20px;width:min(600px,94vw);max-height:88vh;display:flex;flex-direction:column;gap:12px}
+.note-expand-modal h3{font-family:var(--font-head);font-size:17px;font-weight:600;color:var(--text)}
+.note-expand-textarea{flex:1;width:100%;min-height:260px;font-family:var(--font-mono);font-size:14px;line-height:1.8;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);outline:none;resize:vertical;transition:border-color 0.15s}
+.note-expand-textarea:focus{border-color:var(--text)}
+.note-expand-actions{display:flex;gap:8px;justify-content:flex-end}
+/* Workout custom exercises */
+.w-custom-ex-header{display:flex;align-items:center;justify-content:space-between;margin:1.5rem 0 0.75rem}
+.w-add-ex-btn{font-family:'Courier New',monospace;font-size:11px;padding:6px 14px;border:0.5px solid var(--w-border2);border-radius:20px;background:transparent;color:var(--w-text2);cursor:pointer;transition:all 0.15s}
+.w-add-ex-btn:hover{background:var(--w-purple-bg);color:var(--w-purple)}
+.w-custom-ex-list{display:flex;flex-direction:column;gap:0}
+.w-ex-modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:200;align-items:center;justify-content:center}
+.w-ex-modal-bg.open{display:flex}
+.w-ex-modal{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:20px;width:min(460px,94vw);max-height:88vh;overflow-y:auto}
+.w-ex-modal h3{font-family:var(--font-head);font-size:17px;font-weight:600;color:var(--text);margin-bottom:14px}
+.w-ex-label{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:5px;display:block}
+.w-ex-input{width:100%;font-family:var(--font-head);font-size:14px;padding:9px 12px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);outline:none;margin-bottom:12px;transition:border-color 0.15s}
+.w-ex-input:focus{border-color:var(--text)}
+.w-ex-textarea{width:100%;min-height:90px;font-family:var(--font-mono);font-size:13px;padding:9px 12px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);outline:none;resize:vertical;margin-bottom:12px;line-height:1.6;transition:border-color 0.15s}
+.w-ex-textarea:focus{border-color:var(--text)}
+.w-ex-modal-actions{display:flex;gap:8px;margin-top:4px}
+.w-ex-save{flex:1;font-family:var(--font-head);font-size:13px;font-weight:600;padding:10px;border:none;border-radius:8px;background:var(--text);color:var(--bg);cursor:pointer;transition:opacity 0.15s}
+.w-ex-save:hover{opacity:0.85}
+.w-ex-cancel{font-family:var(--font-head);font-size:13px;padding:10px 16px;border:1px solid var(--border);border-radius:8px;background:transparent;color:var(--muted);cursor:pointer;transition:all 0.15s}
+.w-ex-cancel:hover{border-color:var(--text);color:var(--text)}
+.w-ex-edit-btn{font-family:'Courier New',monospace;font-size:10px;padding:3px 8px;border:0.5px solid var(--w-border);border-radius:10px;background:transparent;color:var(--w-text3);cursor:pointer;transition:all 0.15s;margin-left:8px}
+.w-ex-edit-btn:hover{border-color:var(--w-text);color:var(--w-text)}
+/* Import journal */
+.j-import-btn{font-family:var(--font-mono);font-size:11px;padding:5px 12px;border:1px solid var(--border);border-radius:var(--pill-radius);background:var(--card);color:var(--muted);cursor:pointer;transition:all 0.15s}
+.j-import-btn:hover{border-color:var(--text);color:var(--text)}
+/* Image lightbox — stays below sticky nav (z-index 300) */
+.img-lightbox-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:250;align-items:center;justify-content:center;padding:80px 16px 16px}
+.img-lightbox-bg.open{display:flex}
+.img-lightbox-img{max-width:100%;max-height:calc(100vh - 100px);object-fit:contain;border-radius:6px;display:block}
+.img-lightbox-close{position:fixed;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:251;transition:background 0.15s;line-height:1}
+.img-lightbox-close:hover{background:rgba(255,255,255,0.15)}
+/* Graph fullscreen */
+.graph-fs-bg{display:none;position:fixed;inset:0;background:var(--bg);z-index:250;flex-direction:column;padding:80px 24px 24px}
+.graph-fs-bg.open{display:flex}
+.graph-fs-canvas{width:100%;flex:1;display:block}
+.graph-fs-close{position:fixed;top:16px;right:16px;font-family:var(--font-mono);font-size:11px;padding:6px 14px;border:1px solid var(--border);border-radius:var(--pill-radius);background:var(--card);color:var(--muted);cursor:pointer;z-index:251;transition:all 0.15s}
+.graph-fs-close:hover{border-color:var(--text);color:var(--text)}
 .dash-app{max-width:700px;margin:0 auto;padding:1.2rem 1rem 3rem;font-family:var(--font-head)}
 .dash-quote-card{position:relative;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 20px 16px;margin-bottom:1.2rem;overflow:hidden}
 .dash-quote-card::before{content:'"';position:absolute;top:-8px;left:12px;font-size:80px;font-family:Georgia,serif;color:var(--border);line-height:1;pointer-events:none}
@@ -448,7 +503,8 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
 .dash-card-label{font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:6px}
 .dash-card-val{font-size:28px;font-weight:700;color:var(--text);letter-spacing:-0.5px;line-height:1}
 .dash-card-sub{font-family:var(--font-mono);font-size:11px;color:var(--muted);margin-top:4px}
-.dash-card-accent{font-size:13px;font-weight:500;color:var(--text);line-height:1.5}
+.dash-card-accent{font-size:22px;font-weight:700;color:var(--text);line-height:1.2;letter-spacing:-0.5px}
+.dash-gym-label{font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-top:4px;letter-spacing:0.04em}
 /* Goal of the day */
 .dash-goal-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:10px;cursor:pointer;transition:border-color 0.15s}
 .dash-goal-card:hover{border-color:var(--text)}
@@ -481,7 +537,7 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
 .dash-reading-item{font-family:var(--font-mono);font-size:11px;color:var(--muted);padding-left:12px;position:relative;line-height:1.5}
 .dash-reading-item::before{content:'—';position:absolute;left:0;color:var(--border)}
 /* Goal picker modal */
-.dash-gpick-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:700;align-items:center;justify-content:center}
+.dash-gpick-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:200;align-items:center;justify-content:center}
 .dash-gpick-bg.open{display:flex}
 .dash-gpick-modal{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:20px;width:min(420px,92vw);max-height:80vh;overflow-y:auto}
 .dash-gpick-modal h3{font-family:var(--font-head);font-size:17px;font-weight:600;color:var(--text);margin-bottom:14px}
@@ -580,8 +636,9 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
       <div class="exercise-row"><div><div class="ex-name">Tricep Extension Machine <span class="pr-tag">PR: Full stack 3–5 reps</span></div><div class="ex-sub">4×8–10 @ 75% of stack. Triceps = 2/3 of arm size AND your bench lockout. Non-negotiable.</div></div><div class="ex-sets"><div class="sets-badge">4 sets</div><div class="rpe-badge">RPE 8</div></div></div>
       <div class="exercise-row"><div><div class="ex-name">Dips</div><div class="ex-sub">3×12–15 bodyweight. Add weight when 15 reps is easy. Best tricep/chest finisher available.</div></div><div class="ex-sets"><div class="sets-badge">3 sets</div><div class="rpe-badge">RPE 8</div></div></div>
       <div class="science-box"><h4>Why this works</h4><ul><li>Compounds first while CNS is fresh — peak force output for PR progression</li><li>Eccentric overload (3–4 sec) on flys creates more muscle damage = more growth stimulus</li><li>Tricep volume is the direct driver of bench lockout strength</li></ul></div>
-    </div>
-    <div class="w-day-panel">
+      <div class="w-custom-ex-header"><div class="section-label" style="margin:0">Custom exercises</div><button class="w-add-ex-btn" onclick="wExOpenAdd(0)">+ Add exercise</button></div>
+      <div id="w-custom-list-0" class="w-custom-ex-list"></div>
+    </div><div class="w-day-panel">
       <div class="w-day-header"><span class="w-day-title">Pull</span><span class="w-day-focus tag-pull">Back · Biceps · Rear Delts</span></div>
       <div class="note-box">Back width + thickness built here. Lat machine is your primary strength driver. Rows build the dense, thick back that makes you look jacked from behind.</div>
       <div class="section-label">Compounds — Strength Focus</div>
@@ -593,8 +650,9 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
       <div class="exercise-row"><div><div class="ex-name">Face Pulls / Rear Delt Flys</div><div class="ex-sub">3×15 light. Rear delts protect your shoulder joint and make them look 3D.</div></div><div class="ex-sets"><div class="sets-badge">3 sets</div><div class="rpe-badge">RPE 6–7</div></div></div>
       <div class="exercise-row"><div><div class="ex-name">Straight Arm Lat Pulldown</div><div class="ex-sub">3×12 moderate. Isolates lats without bicep involvement. Creates the wing flare.</div></div><div class="ex-sets"><div class="sets-badge">3 sets</div><div class="rpe-badge">RPE 7</div></div></div>
       <div class="science-box"><h4>Why this works</h4><ul><li>Lat pulldown in deep stretch stimulates significantly more hypertrophy than partial ROM</li><li>Rows + pulldowns hit both back thickness and width — you need both for aesthetics</li><li>Hammer curls before isolation curls: brachialis strength directly improves your 1RM curl</li></ul></div>
-    </div>
-    <div class="w-day-panel">
+      <div class="w-custom-ex-header"><div class="section-label" style="margin:0">Custom exercises</div><button class="w-add-ex-btn" onclick="wExOpenAdd(1)">+ Add exercise</button></div>
+      <div id="w-custom-list-1" class="w-custom-ex-list"></div>
+    </div><div class="w-day-panel">
       <div class="w-day-header"><span class="w-day-title">Legs</span><span class="w-day-focus tag-legs">Quads · Hamstrings · Glutes · Calves</span></div>
       <div class="note-box">Leg day is where you're leaving the most gains. Leg press is your primary compound. Extensions and curls are non-negotiable. This will be your hardest session of the week.</div>
       <div class="section-label">Compounds — Strength Focus</div>
@@ -606,8 +664,9 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
       <div class="exercise-row"><div><div class="ex-name">Standing Calf Raise</div><div class="ex-sub">4×15–20. Full stretch at bottom, pause 1 sec at top. Add weight when 20 reps is easy.</div></div><div class="ex-sets"><div class="sets-badge">4 sets</div><div class="rpe-badge">RPE 8</div></div></div>
       <div class="exercise-row"><div><div class="ex-name">Bosu Ball Ab Leg Lifts</div><div class="ex-sub">3×20–25 with 3 sec descent tempo. Core stability directly improves your leg press.</div></div><div class="ex-sets"><div class="sets-badge">3 sets</div><div class="rpe-badge">RPE 8</div></div></div>
       <div class="science-box"><h4>Why this works</h4><ul><li>Leg press comparable hypertrophy to squats with lower injury risk for machine-based lifters</li><li>Extensions and curls activate portions of quads/hams that compounds can't reach</li><li>High calf volume (15–20 reps) is necessary — calves are slow-twitch dominant</li></ul></div>
-    </div>
-    <div class="w-day-panel">
+      <div class="w-custom-ex-header"><div class="section-label" style="margin:0">Custom exercises</div><button class="w-add-ex-btn" onclick="wExOpenAdd(2)">+ Add exercise</button></div>
+      <div id="w-custom-list-2" class="w-custom-ex-list"></div>
+    </div><div class="w-day-panel">
       <div class="w-day-header"><span class="w-day-title">Upper</span><span class="w-day-focus tag-upper">Chest · Back · Shoulders · Arms</span></div>
       <div class="note-box">Second stimulus for everything above the waist. Slightly lighter, higher volume, push-pull supersets. 2× frequency per muscle without doubling your gym time.</div>
       <div class="section-label">Chest & Back Supersets</div>
@@ -619,8 +678,9 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
       <div class="exercise-row"><div><div class="ex-name">Tricep Extension + Hammer Curl (superset)</div><div class="ex-sub">3×10 each. Arms get a second stimulus this week with minimal extra gym time.</div></div><div class="ex-sets"><div class="sets-badge">3×10</div><div class="rpe-badge">Superset</div></div></div>
       <div class="exercise-row"><div><div class="ex-name">Ab Machine</div><div class="ex-sub">3×12–15 @ 70% stack. Controlled ROM, squeeze at peak. Quality over weight here.</div></div><div class="ex-sets"><div class="sets-badge">3 sets</div><div class="rpe-badge">RPE 7–8</div></div></div>
       <div class="science-box"><h4>Why this works</h4><ul><li>Push-pull supersets = same total volume, ~30% shorter session, higher metabolic stress</li><li>2× frequency per muscle group per week is the sweet spot for hypertrophy (meta-analysis backed)</li><li>Higher rep ranges on day 2 complement low-rep strength work — dual stimulus approach</li></ul></div>
-    </div>
-    <div class="w-day-panel">
+      <div class="w-custom-ex-header"><div class="section-label" style="margin:0">Custom exercises</div><button class="w-add-ex-btn" onclick="wExOpenAdd(3)">+ Add exercise</button></div>
+      <div id="w-custom-list-3" class="w-custom-ex-list"></div>
+    </div><div class="w-day-panel">
       <div class="w-day-header"><span class="w-day-title">Lower</span><span class="w-day-focus tag-lower">Quads · Hamstrings · Glutes · Core</span></div>
       <div class="note-box">Second leg stimulus. Volume day — higher reps, shorter rest, metabolic stress. After this: Rest Day Saturday → PR Day Sunday. Your legs will be completely recovered for any leg press PR attempt.</div>
       <div class="section-label">Main Work</div>
@@ -631,6 +691,8 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
       <div class="exercise-row"><div><div class="ex-name">Seated Calf Raise</div><div class="ex-sub">4×15–20. Hits soleus specifically — different angle to standing. Double calf work per week required for visible development.</div></div><div class="ex-sets"><div class="sets-badge">4 sets</div><div class="rpe-badge">RPE 8</div></div></div>
       <div class="exercise-row"><div><div class="ex-name">Bosu Ball Leg Lifts + Ab Machine (circuit)</div><div class="ex-sub">2 rounds: 30 leg lifts → 15 ab machine reps. 3 sec descent on leg lifts. Core finisher to end the week.</div></div><div class="ex-sets"><div class="sets-badge">2 rounds</div><div class="rpe-badge">RPE 8</div></div></div>
       <div class="science-box"><h4>Why this works</h4><ul><li>2× leg frequency produces significantly more hypertrophy than once per week (Schoenfeld et al)</li><li>Volume day + strength day hits both mechanical tension and metabolic stress pathways</li><li>Friday lower → Saturday rest → Sunday PR = maximum freshness for any leg PR attempt</li></ul></div>
+      <div class="w-custom-ex-header"><div class="section-label" style="margin:0">Custom exercises</div><button class="w-add-ex-btn" onclick="wExOpenAdd(4)">+ Add exercise</button></div>
+      <div id="w-custom-list-4" class="w-custom-ex-list"></div>
     </div>
     <div class="w-day-panel">
       <div class="w-day-header"><span class="w-day-title">Rest Day</span><span class="w-day-focus tag-rest">Recovery · Grow · Prepare</span></div>
@@ -846,7 +908,7 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
   </div>
 
   <!-- Stats row -->
-  <div class="dash-grid-3" style="margin-bottom:10px">
+  <div class="dash-grid" style="margin-bottom:10px;grid-template-columns:1fr 1fr 1fr 1fr">
     <div class="dash-card">
       <div class="dash-card-label">Body weight</div>
       <div class="dash-card-val" id="dash-bw">—</div>
@@ -860,6 +922,12 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
     <div class="dash-card">
       <div class="dash-card-label">Gym today</div>
       <div class="dash-card-accent" id="dash-gym">—</div>
+      <div class="dash-gym-label" id="dash-gym-sub"></div>
+    </div>
+    <div class="dash-card">
+      <div class="dash-card-label">Sleep score</div>
+      <div class="dash-card-val" id="dash-sleep">—</div>
+      <div class="dash-card-sub">/ 100 last night</div>
     </div>
   </div>
 
@@ -885,6 +953,35 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
   </div>
 
 </div>
+</div>
+
+<!-- Workout exercise add/edit modal -->
+<div class="w-ex-modal-bg" id="w-ex-modal-bg">
+  <div class="w-ex-modal">
+    <h3 id="w-ex-modal-title">Add exercise</h3>
+    <label class="w-ex-label">Exercise name</label>
+    <input class="w-ex-input" id="w-ex-name" type="text" placeholder="e.g. Cable Fly" maxlength="60">
+    <label class="w-ex-label">Sets</label>
+    <input class="w-ex-input" id="w-ex-sets" type="text" placeholder="e.g. 3 sets" maxlength="20">
+    <label class="w-ex-label">Reps / Scheme</label>
+    <input class="w-ex-input" id="w-ex-reps" type="text" placeholder="e.g. 8–12 reps" maxlength="30">
+    <label class="w-ex-label">RPE</label>
+    <input class="w-ex-input" id="w-ex-rpe" type="text" placeholder="e.g. RPE 8" maxlength="20">
+    <label class="w-ex-label">Description / Notes</label>
+    <textarea class="w-ex-textarea" id="w-ex-desc" placeholder="Instructions, cues, progression notes..."></textarea>
+    <label class="w-ex-label">Day</label>
+    <select class="w-ex-input" id="w-ex-day">
+      <option value="0">Monday · Push</option>
+      <option value="1">Tuesday · Pull</option>
+      <option value="2">Wednesday · Legs</option>
+      <option value="3">Thursday · Upper</option>
+      <option value="4">Friday · Lower</option>
+    </select>
+    <div class="w-ex-modal-actions">
+      <button class="w-ex-cancel" onclick="wExCloseModal()">Cancel</button>
+      <button class="w-ex-save" onclick="wExSaveModal()">Save</button>
+    </div>
+  </div>
 </div>
 
 <!-- Goal picker modal -->
@@ -940,7 +1037,9 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
       <span class="j-count-badge" id="j-count">0</span>
     </div>
     <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-      <input class="j-search" id="j-search" type="text" placeholder="Search..." oninput="jRender()">
+      <input type="file" id="j-import-input" accept=".txt,.json" style="display:none" onchange="jImport(this)">
+      <input class="j-search" id="j-search" type="text" placeholder="Search text or date…" oninput="jRender()">
+      <button class="j-import-btn" onclick="document.getElementById('j-import-input').click()">Import</button>
       <button class="j-export-btn" onclick="jExport()">Export</button>
     </div>
   </div>
@@ -1001,7 +1100,15 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
       </div>
     </div>
     <div class="prog-today-note-wrap">
-      <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:6px">Note for today</div>
+      <div class="sleep-score-wrap" style="margin-bottom:10px">
+        <span class="sleep-score-label">Sleep score</span>
+        <input class="sleep-score-input" id="pt-sleep" type="number" min="0" max="100" step="1" placeholder="0–100" style="width:72px">
+        <span style="font-family:var(--font-mono);font-size:10px;color:var(--muted)">/100</span>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase">Note for today</div>
+        <button class="j-delete-btn" onclick="noteExpand()" style="font-size:10px">Expand ↗</button>
+      </div>
       <textarea class="prog-note-input" id="pt-note" rows="3" placeholder="How did today go?"></textarea>
       <button class="prog-save-btn" onclick="pSaveToday()">Save today's progress</button>
       <div class="prog-save-flash" id="prog-save-flash">Saved to history.</div>
@@ -1009,17 +1116,44 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
   </div>
   <!-- HISTORY sub-panel -->
   <div id="psub-history" class="prog-subpanel" style="display:none">
-    <div class="prog-mode-row">
+    <div class="prog-mode-row" style="flex-wrap:wrap;gap:8px">
       <span class="prog-mode-label">Filter:</span>
       <div class="prog-filter-tabs">
         <button class="prog-filter-btn active" onclick="pSetFilter('all',this)">All</button>
         <button class="prog-filter-btn" onclick="pSetFilter('school',this)">School</button>
         <button class="prog-filter-btn" onclick="pSetFilter('free',this)">Free</button>
       </div>
+      <div class="prog-view-toggle" style="margin-left:auto">
+        <button class="prog-view-btn active" id="pvb-raw" onclick="pSetView('raw',this)">List</button>
+        <button class="prog-view-btn" id="pvb-graph" onclick="pSetView('graph',this)">Graph</button>
+      </div>
     </div>
-    <div class="prog-list" id="prog-list"></div>
+    <div id="prog-graph-section" style="display:none">
+      <div class="prog-graph-wrap">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:6px">
+          <button class="j-delete-btn" onclick="graphFsOpen()" style="font-size:10px">⛶ Fullscreen</button>
+        </div>
+        <canvas class="prog-graph-canvas" id="prog-graph-canvas"></canvas>
+      </div>
+      <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);text-align:center;margin-bottom:8px">
+        <span style="color:var(--green)">■</span> Completion % &nbsp; <span style="color:var(--blue)">■</span> Sleep score (×10)
+      </div>
+    </div>
+    <div id="prog-list" class="prog-list"></div>
   </div>
 </div>
+</div>
+
+<!-- Note expand modal -->
+<div class="note-expand-bg" id="note-expand-bg">
+  <div class="note-expand-modal">
+    <h3>Note for today</h3>
+    <textarea class="note-expand-textarea" id="note-expand-ta" placeholder="How did today go?"></textarea>
+    <div class="note-expand-actions">
+      <button class="goal-modal-cancel" onclick="noteExpandClose()">Close</button>
+      <button class="goal-modal-save" onclick="noteExpandSave()">Save</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -1355,7 +1489,7 @@ function jOpenFullscreen(id){
   document.getElementById('jfs-meta').textContent=e.date+(e.images&&e.images.length?' · '+e.images.length+' image'+(e.images.length>1?'s':''):'');
   document.getElementById('jfs-body').textContent=e.body||'';
   const imgs=document.getElementById('jfs-imgs');
-  imgs.innerHTML=(e.images||[]).map(src=>`<img src="${src}" onclick="this.requestFullscreen&&this.requestFullscreen()">`).join('');
+  imgs.innerHTML=(e.images||[]).map(src=>`<img src="${src}" onclick="imgLightboxOpen('${src.replace(/'/g,"\\'")}')" style="cursor:zoom-in">`).join('');
   document.getElementById('j-fullscreen-bg').classList.add('open');
 }
 function jCloseFullscreen(){document.getElementById('j-fullscreen-bg').classList.remove('open');}
@@ -1366,7 +1500,13 @@ function jStartEdit(id,e){
   if(!entry)return;
   const bodyDiv=document.getElementById('je-body-'+id);
   if(!bodyDiv)return;
-  bodyDiv.innerHTML=`<textarea class="j-edit-area" id="je-edit-${id}">${escHtml(entry.body||'')}</textarea>
+  const tagOpts=['general','trading','fitness','mindset','review','goals','learning'].map(t=>`<option value="${t}"${entry.tag===t?' selected':''}>${t.charAt(0).toUpperCase()+t.slice(1)}</option>`).join('');
+  bodyDiv.innerHTML=`
+    <div style="margin-bottom:8px">
+      <input class="j-title-input" id="je-edit-title-${id}" type="text" value="${escHtml(entry.title||'')}" placeholder="Title" style="width:100%;margin-bottom:6px">
+      <select class="j-tag-select" id="je-edit-tag-${id}" style="width:100%">${tagOpts}</select>
+    </div>
+    <textarea class="j-edit-area" id="je-edit-${id}">${escHtml(entry.body||'')}</textarea>
     <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:8px">
       <button class="j-delete-btn" onclick="jEditingId=null;jRender()">Cancel</button>
       <button class="j-edit-save-btn" onclick="jSaveEdit(${id})">Save</button>
@@ -1376,11 +1516,17 @@ function jStartEdit(id,e){
 
 function jSaveEdit(id){
   const ta=document.getElementById('je-edit-'+id);
+  const titleEl=document.getElementById('je-edit-title-'+id);
+  const tagEl=document.getElementById('je-edit-tag-'+id);
   if(!ta)return;
-  const newBody=ta.value;
   const entries=jLoad();
   const idx=entries.findIndex(x=>x.id===id);
-  if(idx>-1){entries[idx].body=newBody;jSave2(entries);}
+  if(idx>-1){
+    entries[idx].body=ta.value;
+    if(titleEl)entries[idx].title=titleEl.value.trim()||entries[idx].title;
+    if(tagEl)entries[idx].tag=tagEl.value;
+    jSave2(entries);
+  }
   jEditingId=null;
   jRender();
 }
@@ -1388,12 +1534,60 @@ function jSaveEdit(id){
 function jRender(){
   const entries=jLoad();
   const q=(document.getElementById('j-search')||{}).value||'';
-  const ql=q.toLowerCase();
+  const ql=q.toLowerCase().trim();
   const mn=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const now=new Date();
   document.getElementById('j-subtitle').textContent=`${now.getDate()} ${mn[now.getMonth()]} ${now.getFullYear()} · ${entries.length} ${entries.length===1?'entry':'entries'} saved`;
   document.getElementById('j-count').textContent=entries.length;
-  const filtered=ql?entries.filter(e=>(e.title||'').toLowerCase().includes(ql)||(e.body||'').toLowerCase().includes(ql)):entries;
+
+  /* ── Date-aware search ──
+     Normalise the query into a canonical "D Mon YYYY" form and also check
+     raw text. Accepts any of: "6 April 2026", "06/04/26", "06/04/2026",
+     "6/4/26", "April 6 2026", "6-4-2026", "2026-04-06" etc. */
+  function jParseQueryDate(raw){
+    if(!raw) return null;
+    const MONTHS_LONG=['january','february','march','april','may','june','july','august','september','october','november','december'];
+    const MONTHS_SHORT=['jan','feb','mar','apr','may','jun','jul','aug','sep','oct','nov','dec'];
+    let d=null,m=null,y=null;
+    // ISO: 2026-04-06
+    let iso=raw.match(/^(\d{4})[\/\-](\d{1,2})[\/\-](\d{1,2})$/);
+    if(iso){y=parseInt(iso[1]);m=parseInt(iso[2])-1;d=parseInt(iso[3]);}
+    // numeric: 6/4/26, 06/04/2026, 6-4-26 (D/M/Y)
+    if(!iso){let nm=raw.match(/^(\d{1,2})[\/\-\.](\d{1,2})[\/\-\.](\d{2,4})$/);
+      if(nm){d=parseInt(nm[1]);m=parseInt(nm[2])-1;let yr=parseInt(nm[3]);y=yr<100?2000+yr:yr;}}
+    // text: "6 April 2026", "April 6 2026", "6 Apr 2026"
+    if(!iso&&d===null){
+      const textMatch=raw.match(/(\d{1,2})\s+([a-z]+)\s+(\d{2,4})/i)||raw.match(/([a-z]+)\s+(\d{1,2})[,\s]+(\d{2,4})/i);
+      if(textMatch){
+        let dayStr,monStr,yrStr;
+        if(/^\d/.test(textMatch[0])){dayStr=textMatch[1];monStr=textMatch[2];yrStr=textMatch[3];}
+        else{monStr=textMatch[1];dayStr=textMatch[2];yrStr=textMatch[3];}
+        d=parseInt(dayStr);
+        const ml=monStr.toLowerCase();
+        m=MONTHS_LONG.indexOf(ml);
+        if(m===-1) m=MONTHS_SHORT.indexOf(ml.slice(0,3));
+        let yr=parseInt(yrStr);y=yr<100?2000+yr:yr;
+      }
+    }
+    if(d===null||m===null||m===-1||y===null) return null;
+    // Return a canonical short string to compare against entry.date which is like "6 Apr 2025 · 14:30"
+    return {d,m,y};
+  }
+  function jDateMatchesEntry(parsed,entry){
+    if(!parsed||!entry.ts) return false;
+    const entryDate=new Date(entry.ts);
+    return entryDate.getDate()===parsed.d && entryDate.getMonth()===parsed.m && entryDate.getFullYear()===parsed.y;
+  }
+
+  const parsedDate=jParseQueryDate(ql);
+  const filtered=ql?entries.filter(e=>{
+    // First try date match
+    if(parsedDate && jDateMatchesEntry(parsedDate,e)) return true;
+    // Also try raw text match against date string (e.g. user types "Apr 2026")
+    if((e.date||'').toLowerCase().includes(ql)) return true;
+    // Title and body text match
+    return (e.title||'').toLowerCase().includes(ql)||(e.body||'').toLowerCase().includes(ql);
+  }):entries;
   const list=document.getElementById('j-list');
   if(filtered.length===0){
     list.innerHTML=`<div class="j-empty">${entries.length===0?'No entries yet. Write something above.':'No entries match your search.'}</div>`;
@@ -1414,10 +1608,11 @@ function jRender(){
       </div>
       <div class="j-entry-body">
         <div id="je-body-${e.id}"><div class="j-entry-text">${escHtml(e.body||'')}</div></div>
+        ${imgCount>0?`<div class="j-img-preview" style="margin-top:10px">${(e.images||[]).slice(0,3).map(src=>`<div class="j-img-thumb"><img src="${src}" onclick="imgLightboxOpen('${src.replace(/'/g,"\\'")}')" style="cursor:zoom-in"></div>`).join('')}${imgCount>3?`<div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);display:flex;align-items:center;padding:0 4px">+${imgCount-3} more</div>`:''}</div>`:''}
         <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;flex-wrap:wrap;gap:6px">
           <div style="display:flex;gap:8px">
-            <button class="j-delete-btn" onclick="event.stopPropagation();jStartEdit(${e.id},event)">Edit</button>
-            ${imgCount>0?`<button class="j-delete-btn" onclick="event.stopPropagation();jOpenFullscreen(${e.id})">View full</button>`:''}
+            <button class="j-delete-btn" onclick="event.stopPropagation();jStartEdit(${e.id},event)">✏ Edit</button>
+            ${imgCount>0?`<button class="j-delete-btn" onclick="event.stopPropagation();jOpenFullscreen(${e.id})">🖼 View images (${imgCount})</button>`:''}
           </div>
           <button class="j-delete-btn" onclick="event.stopPropagation();jDelete(${e.id})">Delete</button>
         </div>
@@ -1431,12 +1626,57 @@ function escHtml(s){return(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').rep
 function jExport(){
   const entries=jLoad();
   if(entries.length===0){alert('No entries to export.');return;}
-  const lines=entries.map(e=>`=== ${e.title} ===\n${e.date} [${e.tag}]\n\n${e.body}\n`).join('\n---\n\n');
-  const blob=new Blob([lines],{type:'text/plain'});
+  /* Export as JSON so all fields (images, tags, timestamps) are preserved on import */
+  const blob=new Blob([JSON.stringify(entries,null,2)],{type:'application/json'});
   const url=URL.createObjectURL(blob);
   const a=document.createElement('a');
-  a.href=url;a.download='mayank_journal_'+Date.now()+'.txt';a.click();
+  a.href=url;a.download='mayank_journal_'+Date.now()+'.json';a.click();
   URL.revokeObjectURL(url);
+}
+
+function jImport(input){
+  const file=input.files[0];
+  if(!file){return;}
+  const reader=new FileReader();
+  reader.onload=function(e){
+    try{
+      const text=e.target.result.trim();
+      let imported=[];
+      if(text.startsWith('[')||text.startsWith('{')){
+        /* JSON format */
+        const parsed=JSON.parse(text);
+        imported=Array.isArray(parsed)?parsed:[parsed];
+        /* Validate minimal shape */
+        imported=imported.filter(entry=>entry&&(entry.id||entry.title||entry.body));
+        /* Ensure required fields */
+        imported=imported.map(entry=>({
+          id:entry.id||Date.now()+Math.random(),
+          title:entry.title||'Untitled',
+          body:entry.body||'',
+          tag:entry.tag||'general',
+          date:entry.date||'Imported',
+          ts:entry.ts||Date.now(),
+          images:entry.images||[]
+        }));
+      } else {
+        alert('Import failed: only JSON format (exported from this app) is supported.');
+        input.value='';return;
+      }
+      if(imported.length===0){alert('No valid entries found in file.');input.value='';return;}
+      /* Merge: keep existing, add imported entries not already present by id */
+      const existing=jLoad();
+      const existingIds=new Set(existing.map(e=>String(e.id)));
+      const toAdd=imported.filter(e=>!existingIds.has(String(e.id)));
+      const merged=[...existing,...toAdd].sort((a,b)=>b.ts-a.ts);
+      jSave2(merged);
+      jRender();
+      alert(`Imported ${toAdd.length} new entr${toAdd.length===1?'y':'ies'}. ${imported.length-toAdd.length} duplicate(s) skipped.`);
+    } catch(err){
+      alert('Import failed: could not parse file. Make sure it is a valid JSON export from this app.\n\n'+err.message);
+    }
+    input.value='';
+  };
+  reader.readAsText(file);
 }
 
 document.getElementById('j-body').addEventListener('input',function(){
@@ -1447,6 +1687,11 @@ jRender();
 
 /* ══ PROGRESS SYSTEM ══ */
 const P_NOTES_KEY='mayank_progress_notes_v1';
+const P_SLEEP_KEY='mayank_sleep_v1';
+
+function pLoadSleep(){try{return JSON.parse(localStorage.getItem(P_SLEEP_KEY)||'{}');}catch(e){return{};}}
+function pSaveSleepEntry(dateKey,val){const s=pLoadSleep();s[dateKey]=val;try{localStorage.setItem(P_SLEEP_KEY,JSON.stringify(s));}catch(e){}}
+function pGetSleep(dateKey){const v=pLoadSleep()[dateKey];return v!==undefined&&v!==''?v:null;}
 const P_MODE_KEY='mayank_progress_mode_v1';
 let pFilter='all';
 
@@ -1625,6 +1870,14 @@ function pRender(){
     ptNote.addEventListener('blur',()=>pSaveNote(todayKey,ptNote.value));
   }
 
+  /* today sleep score */
+  const ptSleep=document.getElementById('pt-sleep');
+  if(ptSleep&&document.activeElement!==ptSleep){const sv=pGetSleep(todayKey);ptSleep.value=sv!==null?sv:'';}
+  if(ptSleep&&!ptSleep._bound){
+    ptSleep._bound=true;
+    ptSleep.addEventListener('blur',()=>{const v=ptSleep.value.trim();pSaveSleepEntry(todayKey,v!==''?parseFloat(v):'');});
+  }
+
   /* subtitle */
   const subEl=document.getElementById('prog-subtitle');
   if(subEl) subEl.textContent=`${today.getDate()} ${mn[today.getMonth()]} ${today.getFullYear()}`;
@@ -1672,11 +1925,79 @@ function pRender(){
   });
 
   const list=document.getElementById('prog-list');
+  const graphSection=document.getElementById('prog-graph-section');
   if(!list) return;
+
+  /* View toggle state */
+  const isGraph=(window._pView||'raw')==='graph';
+  if(graphSection) graphSection.style.display=isGraph?'block':'none';
+
   if(filtered.length===0){list.innerHTML='<div class="prog-empty">No days logged yet. Come back tomorrow.</div>';return;}
 
   /* newest first */
   const reversed=[...filtered].reverse();
+
+  if(isGraph){
+    /* Graph view — draw on canvas */
+    list.innerHTML='';
+    requestAnimationFrame(()=>{
+      const canvas=document.getElementById('prog-graph-canvas');
+      if(!canvas)return;
+      const dpr=window.devicePixelRatio||1;
+      const W=canvas.offsetWidth||300;
+      const H=160;
+      canvas.width=W*dpr;canvas.height=H*dpr;
+      canvas.style.height=H+'px';
+      const ctx=canvas.getContext('2d');
+      ctx.scale(dpr,dpr);
+      const pts=reversed.slice(0,30).reverse(); // oldest→newest, max 30
+      if(pts.length<2){ctx.fillStyle='var(--muted)';ctx.font='12px monospace';ctx.fillText('Not enough data yet',10,80);return;}
+      const pad={l:32,r:12,t:16,b:28};
+      const gW=W-pad.l-pad.r, gH=H-pad.t-pad.b;
+      const isDarkMode=document.documentElement.getAttribute('data-theme')==='dark';
+      const gridColor=isDarkMode?'rgba(255,255,255,0.07)':'rgba(0,0,0,0.07)';
+      const textColor=isDarkMode?'#9a9690':'#7a7970';
+      /* Grid lines */
+      ctx.strokeStyle=gridColor;ctx.lineWidth=1;
+      [0,25,50,75,100].forEach(v=>{
+        const y=pad.t+gH*(1-v/100);
+        ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+gW,y);ctx.stroke();
+        ctx.fillStyle=textColor;ctx.font=`10px 'DM Mono',monospace`;ctx.textAlign='right';
+        ctx.fillText(v+'%',pad.l-4,y+3);
+      });
+      /* Data points */
+      const pctData=pts.map(d=>{const tot=pGetTotal(d.dayIdx,d.mode);const comp=pGetCompletedForDate(d.dateKey,d.mode);return tot>0?Math.round(comp/tot*100):0;});
+      const sleepData=pts.map(d=>{const sv=pGetSleep(d.dateKey);return sv!==null?sv:null;});
+      const xStep=gW/(pts.length-1);
+      function drawLine(data,color){
+        ctx.beginPath();ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineJoin='round';
+        let started=false;
+        data.forEach((v,i)=>{
+          if(v===null)return;
+          const x=pad.l+i*xStep, y=pad.t+gH*(1-v/100);
+          if(!started){ctx.moveTo(x,y);started=true;}else{ctx.lineTo(x,y);}
+        });
+        ctx.stroke();
+        /* Dots */
+        data.forEach((v,i)=>{
+          if(v===null)return;
+          const x=pad.l+i*xStep, y=pad.t+gH*(1-v/100);
+          ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();
+        });
+      }
+      drawLine(pctData,'#2d6a4f');
+      drawLine(sleepData,'#1a3a5c');
+      /* X axis labels — show every ~5 pts */
+      ctx.fillStyle=textColor;ctx.font=`9px 'DM Mono',monospace`;ctx.textAlign='center';
+      pts.forEach((d,i)=>{
+        if(i%(Math.ceil(pts.length/6))!==0&&i!==pts.length-1)return;
+        ctx.fillText(`${d.date.getDate()}/${d.date.getMonth()+1}`,pad.l+i*xStep,H-6);
+      });
+    });
+    return;
+  }
+
+  /* Raw list view */
   list.innerHTML=reversed.map(d=>{
     const isToday=d.dateKey===todayKey;
     const tot=pGetTotal(d.dayIdx,d.mode);
@@ -1684,6 +2005,8 @@ function pRender(){
     const pct=tot>0?Math.round(comp/tot*100):0;
     const bc=pBarClass(pct);
     const note=pGetNote(d.dateKey);
+    const sleep=pGetSleep(d.dateKey);
+    const sleepBadge=sleep!==null?`<span class="sleep-score-badge" style="font-size:10px;padding:2px 8px">😴 ${sleep}/100</span>`:`<span style="font-family:var(--font-mono);font-size:10px;color:var(--muted)">Sleep: N/A</span>`;
     const dayLabel=`${dn[d.dayIdx]}, ${d.date.getDate()} ${mn[d.date.getMonth()]} ${d.date.getFullYear()}`;
     const mLabel=d.mode==='school'?'School Day':d.mode==='free'?'Free Day':'Rest Day';
     const badgeCls=d.mode==='school'?'school':d.mode==='free'?'free':'rest';
@@ -1699,8 +2022,12 @@ function pRender(){
       <div class="prog-bar-wrap">
         <div class="prog-bar-track"><div class="prog-bar-fill ${bc}" style="width:${pct}%"></div></div>
       </div>
-      <div class="prog-day-meta">${comp} of ${tot} blocks completed${toggleHint}</div>
+      <div class="prog-day-meta" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">${comp} of ${tot} blocks${toggleHint} &nbsp; ${sleepBadge}</div>
       <div class="prog-note-wrap">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+          <span style="font-family:var(--font-mono);font-size:9px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase">Note</span>
+          <button class="j-delete-btn" onclick="noteExpandHistory('${d.dateKey}')" style="font-size:9px;padding:2px 7px">↗</button>
+        </div>
         <textarea class="prog-note-input" rows="2" placeholder="Note for this day…" onblur="pSaveNote('${d.dateKey}',this.value)">${escHtml(note)}</textarea>
       </div>
     </div>`;
@@ -1724,6 +2051,40 @@ window.switchPanel=function(p,btn){
 
 pRender();
 
+/* ── Progress graph/list view toggle ── */
+window._pView='raw';
+function pSetView(v,btn){
+  window._pView=v;
+  document.querySelectorAll('.prog-view-btn').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  pRender();
+}
+
+/* ── Note expand modal ── */
+function noteExpand(){
+  const ta=document.getElementById('pt-note');
+  const val=ta?ta.value:'';
+  const expTa=document.getElementById('note-expand-ta');
+  if(expTa) expTa.value=val;
+  const bg=document.getElementById('note-expand-bg');
+  if(bg){bg.classList.add('open');setTimeout(()=>{if(expTa)expTa.focus();},80);}
+}
+function noteExpandClose(){
+  const bg=document.getElementById('note-expand-bg');
+  if(bg)bg.classList.remove('open');
+}
+function noteExpandSave(){
+  const expTa=document.getElementById('note-expand-ta');
+  const ta=document.getElementById('pt-note');
+  if(!expTa)return;
+  const val=expTa.value;
+  if(ta) ta.value=val;
+  const today=new Date();today.setHours(0,0,0,0);
+  pSaveNote(pDateKey(today),val);
+  noteExpandClose();
+}
+(function(){const bg=document.getElementById('note-expand-bg');if(bg)bg.addEventListener('click',function(e){if(e.target===this)noteExpandClose();});})();
+
 /* ══ SAVE TODAY BUTTON ══ */
 function pSaveToday(){
   const today=new Date();today.setHours(0,0,0,0);
@@ -1736,10 +2097,14 @@ function pSaveToday(){
   /* Save note */
   const noteEl=document.getElementById('pt-note');
   if(noteEl) pSaveNote(dk,noteEl.value);
+  /* Save sleep score */
+  const sleepEl=document.getElementById('pt-sleep');
+  if(sleepEl&&sleepEl.value.trim()!=='') pSaveSleepEntry(dk,parseFloat(sleepEl.value));
   /* Persist a snapshot into the progress days store */
   try{
     const snaps=JSON.parse(localStorage.getItem('mayank_prog_snaps')||'{}');
-    snaps[dk]={mode,comp,tot,pct,ts:Date.now()};
+    const sleep=pGetSleep(dk);
+    snaps[dk]={mode,comp,tot,pct,sleep,ts:Date.now()};
     localStorage.setItem('mayank_prog_snaps',JSON.stringify(snaps));
   }catch(e){}
   /* Flash confirmation */
@@ -2093,6 +2458,238 @@ function bwRender(){
 document.getElementById('bw-modal-bg').addEventListener('click',function(e){if(e.target===this)bwCloseModal();});
 bwRender();
 prRender();
+
+/* ══ WORKOUT CUSTOM EXERCISES ══ */
+const W_EX_KEY='mayank_workout_custom_v1';
+let wExEditId=null, wExTargetDay=0;
+
+function wExLoad(){try{return JSON.parse(localStorage.getItem(W_EX_KEY)||'{}');}catch(e){return{};}}
+function wExSaveAll(d){try{localStorage.setItem(W_EX_KEY,JSON.stringify(d));}catch(e){alert('Storage error.');}}
+
+function wExOpenAdd(dayIdx){
+  wExEditId=null; wExTargetDay=dayIdx;
+  document.getElementById('w-ex-modal-title').textContent='Add exercise';
+  document.getElementById('w-ex-name').value='';
+  document.getElementById('w-ex-sets').value='';
+  document.getElementById('w-ex-reps').value='';
+  document.getElementById('w-ex-rpe').value='';
+  document.getElementById('w-ex-desc').value='';
+  document.getElementById('w-ex-day').value=dayIdx;
+  document.getElementById('w-ex-modal-bg').classList.add('open');
+  setTimeout(()=>document.getElementById('w-ex-name').focus(),80);
+}
+
+function wExOpenEdit(id){
+  const data=wExLoad(); const ex=data[id]; if(!ex) return;
+  wExEditId=id; wExTargetDay=ex.dayIdx;
+  document.getElementById('w-ex-modal-title').textContent='Edit exercise';
+  document.getElementById('w-ex-name').value=ex.name||'';
+  document.getElementById('w-ex-sets').value=ex.sets||'';
+  document.getElementById('w-ex-reps').value=ex.reps||'';
+  document.getElementById('w-ex-rpe').value=ex.rpe||'';
+  document.getElementById('w-ex-desc').value=ex.desc||'';
+  document.getElementById('w-ex-day').value=ex.dayIdx||0;
+  document.getElementById('w-ex-modal-bg').classList.add('open');
+  setTimeout(()=>document.getElementById('w-ex-name').focus(),80);
+}
+
+function wExCloseModal(){
+  document.getElementById('w-ex-modal-bg').classList.remove('open');
+  wExEditId=null;
+}
+
+function wExSaveModal(){
+  const name=document.getElementById('w-ex-name').value.trim();
+  if(!name){alert('Enter an exercise name.');return;}
+  const sets=document.getElementById('w-ex-sets').value.trim();
+  const reps=document.getElementById('w-ex-reps').value.trim();
+  const rpe=document.getElementById('w-ex-rpe').value.trim();
+  const desc=document.getElementById('w-ex-desc').value.trim();
+  const dayIdx=parseInt(document.getElementById('w-ex-day').value)||0;
+  const data=wExLoad();
+  if(wExEditId){
+    data[wExEditId]={...data[wExEditId],name,sets,reps,rpe,desc,dayIdx};
+  } else {
+    const id='wex_'+Date.now();
+    data[id]={id,name,sets,reps,rpe,desc,dayIdx,created:Date.now()};
+  }
+  wExSaveAll(data);
+  wExCloseModal();
+  wExRender();
+}
+
+function wExDelete(id){
+  if(!confirm('Delete this exercise?'))return;
+  const data=wExLoad(); delete data[id]; wExSaveAll(data); wExRender();
+}
+
+function wExRender(){
+  const data=wExLoad();
+  for(let di=0;di<5;di++){
+    const el=document.getElementById('w-custom-list-'+di);
+    if(!el)continue;
+    const exercises=Object.values(data).filter(ex=>ex.dayIdx===di).sort((a,b)=>a.created-b.created);
+    if(exercises.length===0){el.innerHTML='<div style="font-family:\'Courier New\',monospace;font-size:11px;color:var(--w-text3);padding:8px 0 0">None yet.</div>';continue;}
+    el.innerHTML=exercises.map(ex=>`<div class="exercise-row">
+      <div>
+        <div class="ex-name">${escHtml(ex.name)}<button class="w-ex-edit-btn" onclick="wExOpenEdit('${ex.id}')">Edit</button><button class="w-ex-edit-btn" style="margin-left:4px" onclick="wExDelete('${ex.id}')">Delete</button></div>
+        ${ex.desc?`<div class="ex-sub">${escHtml(ex.desc)}</div>`:''}
+      </div>
+      <div class="ex-sets">
+        ${ex.sets?`<div class="sets-badge">${escHtml(ex.sets)}</div>`:''}
+        ${ex.rpe?`<div class="rpe-badge">${escHtml(ex.rpe)}</div>`:''}
+        ${ex.reps&&!ex.sets?`<div class="sets-badge">${escHtml(ex.reps)}</div>`:''}
+      </div>
+    </div>`).join('');
+  }
+}
+
+document.getElementById('w-ex-modal-bg').addEventListener('click',function(e){if(e.target===this)wExCloseModal();});
+wExRender();
+
+/* ══ IMAGE LIGHTBOX ══ */
+function imgLightboxOpen(src){
+  const img=document.getElementById('img-lightbox-img');
+  const bg=document.getElementById('img-lightbox-bg');
+  if(!img||!bg) return;
+  img.src=src;
+  bg.classList.add('open');
+}
+function imgLightboxClose(){
+  const bg=document.getElementById('img-lightbox-bg');
+  if(bg) bg.classList.remove('open');
+}
+function imgLightboxBgClick(e){
+  /* Close when clicking the dark backdrop, not the image itself */
+  if(e.target===document.getElementById('img-lightbox-bg')) imgLightboxClose();
+}
+/* ESC key closes lightbox */
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    imgLightboxClose();
+    graphFsClose();
+  }
+});
+
+/* ══ GRAPH FULLSCREEN ══ */
+function drawGraphOnCanvas(canvas, allDays, todayKey){
+  if(!canvas) return;
+  const dpr=window.devicePixelRatio||1;
+  const W=canvas.offsetWidth||canvas.parentElement.offsetWidth||320;
+  const H=canvas.offsetHeight||canvas.parentElement.offsetHeight||300;
+  canvas.width=W*dpr; canvas.height=H*dpr;
+  canvas.style.width=W+'px'; canvas.style.height=H+'px';
+  const ctx=canvas.getContext('2d');
+  ctx.scale(dpr,dpr);
+  const dn=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  const mn=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const pts=allDays.slice(-30); // last 30 days oldest→newest
+  if(pts.length<2){
+    ctx.fillStyle='var(--muted)';ctx.font='12px monospace';
+    ctx.fillText('Not enough data yet — keep logging!',10,H/2);
+    return;
+  }
+  const pad={l:40,r:16,t:20,b:36};
+  const gW=W-pad.l-pad.r, gH=H-pad.t-pad.b;
+  const isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  const gridColor=isDark?'rgba(255,255,255,0.07)':'rgba(0,0,0,0.07)';
+  const textColor=isDark?'#9a9690':'#7a7970';
+  /* Grid */
+  ctx.strokeStyle=gridColor; ctx.lineWidth=1;
+  [0,25,50,75,100].forEach(v=>{
+    const y=pad.t+gH*(1-v/100);
+    ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+gW,y);ctx.stroke();
+    ctx.fillStyle=textColor;ctx.font=`10px 'DM Mono',monospace`;ctx.textAlign='right';
+    ctx.fillText(v+'%',pad.l-5,y+3);
+  });
+  /* Data */
+  const xStep=gW/(pts.length-1);
+  const pctData=pts.map(d=>{const tot=pGetTotal(d.dayIdx,d.mode);const comp=pGetCompletedForDate(d.dateKey,d.mode);return tot>0?Math.round(comp/tot*100):0;});
+  const sleepData=pts.map(d=>{const sv=pGetSleep(d.dateKey);return sv!==null?sv:null;});
+  function drawLine(data,color,dashed){
+    ctx.beginPath();ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineJoin='round';
+    if(dashed) ctx.setLineDash([4,3]); else ctx.setLineDash([]);
+    let started=false;
+    data.forEach((v,i)=>{
+      if(v===null)return;
+      const x=pad.l+i*xStep, y=pad.t+gH*(1-v/100);
+      if(!started){ctx.moveTo(x,y);started=true;}else ctx.lineTo(x,y);
+    });
+    ctx.stroke();
+    ctx.setLineDash([]);
+    data.forEach((v,i)=>{
+      if(v===null)return;
+      const x=pad.l+i*xStep, y=pad.t+gH*(1-v/100);
+      ctx.beginPath();ctx.arc(x,y,3.5,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();
+    });
+  }
+  /* Green = completion, Blue dashed = sleep */
+  drawLine(pctData,isDark?'#7ec87a':'#2d6a4f',false);
+  drawLine(sleepData,isDark?'#7ab3e0':'#1a3a5c',true);
+  /* X labels */
+  ctx.fillStyle=textColor;ctx.font=`9px 'DM Mono',monospace`;ctx.textAlign='center';
+  const step=Math.ceil(pts.length/6);
+  pts.forEach((d,i)=>{
+    if(i%step!==0&&i!==pts.length-1) return;
+    ctx.fillText(`${d.date.getDate()} ${mn[d.date.getMonth()]}`,pad.l+i*xStep,H-8);
+  });
+}
+
+function graphFsOpen(){
+  const bg=document.getElementById('graph-fs-bg');
+  if(!bg) return;
+  bg.classList.add('open');
+  /* Draw after open so canvas has layout dimensions */
+  requestAnimationFrame(()=>{
+    const canvas=document.getElementById('graph-fs-canvas');
+    /* Get days same way pRender does */
+    const allDays=pBuildDayList();
+    const pFilter_local=window._pFilter||'all';
+    const filtered=allDays.filter(d=>{
+      if(pFilter_local==='school') return d.mode==='school';
+      if(pFilter_local==='free') return d.mode==='free'||d.mode==='rest';
+      return true;
+    });
+    const today=new Date();today.setHours(0,0,0,0);
+    drawGraphOnCanvas(canvas, filtered, pDateKey(today));
+  });
+}
+function graphFsClose(){
+  const bg=document.getElementById('graph-fs-bg');
+  if(bg) bg.classList.remove('open');
+}
+
+/* ══ HISTORY NOTE EXPAND (per-day) ══ */
+function noteExpandHistory(dateKey){
+  const expTa=document.getElementById('note-expand-ta');
+  const h3=document.querySelector('#note-expand-bg h3');
+  if(!expTa) return;
+  const val=pGetNote(dateKey);
+  expTa.value=val;
+  /* Store which dateKey we're editing */
+  expTa.dataset.dateKey=dateKey;
+  if(h3) h3.textContent='Note — '+dateKey;
+  const bg=document.getElementById('note-expand-bg');
+  if(bg){bg.classList.add('open');setTimeout(()=>expTa.focus(),80);}
+}
+/* Patch noteExpandSave to handle both today and history date keys */
+const _origNoteExpandSave=window.noteExpandSave;
+window.noteExpandSave=function(){
+  const expTa=document.getElementById('note-expand-ta');
+  if(!expTa) return;
+  const val=expTa.value;
+  const dateKey=expTa.dataset.dateKey;
+  if(dateKey){
+    pSaveNote(dateKey, val);
+    /* If it's today, also sync the today textarea */
+    const today=new Date();today.setHours(0,0,0,0);
+    if(dateKey===pDateKey(today)){
+      const ta=document.getElementById('pt-note');
+      if(ta) ta.value=val;
+    }
+  }
+  noteExpandClose();
+};
 </script>
 <!-- ══ GOALS PANEL ══ -->
 <div class="main-panel" id="panel-goals">
@@ -2165,6 +2762,23 @@ prRender();
     <div class="j-fullscreen-imgs" id="jfs-imgs"></div>
   </div>
 </div>
+
+<!-- Image lightbox -->
+<div class="img-lightbox-bg" id="img-lightbox-bg" onclick="imgLightboxBgClick(event)">
+  <button class="img-lightbox-close" onclick="imgLightboxClose()">×</button>
+  <img class="img-lightbox-img" id="img-lightbox-img" src="" alt="">
+</div>
+
+<!-- Graph fullscreen -->
+<div class="graph-fs-bg" id="graph-fs-bg">
+  <button class="graph-fs-close" onclick="graphFsClose()">✕ Close</button>
+  <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);margin-bottom:10px;display:flex;gap:16px">
+    <span><span style="color:var(--green)">■</span> Completion %</span>
+    <span><span style="color:var(--blue)">■</span> Sleep score</span>
+  </div>
+  <canvas class="graph-fs-canvas" id="graph-fs-canvas"></canvas>
+</div>
+
 </body>
 </html>
 <script>
@@ -2593,6 +3207,17 @@ const DASH_QUOTES=[
   {text:"The secret of getting ahead is getting started.",author:"Mark Twain"},
   {text:"Time is your most valuable asset.",author:"Gary Vaynerchuk"},
   {text:"Most people overestimate what they can do in one year and underestimate what they can do in ten years.",author:"Bill Gates"},
+  {text:"Work for the future, focus on the present, learn from the past.",author:"Unknown"},
+  {text:"To get something you never had, you must do something you've never done.",author:"Unknown"},
+  {text:"Don't feel the pressure, be the pressure.",author:"Unknown"},
+  {text:"If God brought you to it, He'll bring you through it.",author:"Unknown"},
+  {text:"Either increase your sacrifice or reduce your desire.",author:"Unknown"},
+  {text:"A tree doesn't compete with the trees around it — it just grows.",author:"Unknown"},
+  {text:"There is no right time, just time.",author:"Unknown"},
+  {text:"High risk, high reward.",author:"Unknown"},
+  {text:"God wouldn't put it on your mind if you couldn't do it.",author:"Unknown"},
+  {text:"Life is this. I like this.",author:"Harvey Specter"},
+  {text:"When you're backed against the wall, break the goddamn thing down.",author:"Harvey Specter"},
 ];
 let dashQuoteIdx=-1;
 function dashGetQuote(){
@@ -2761,16 +3386,27 @@ function dashRender(){
   const bwEl=document.getElementById('dash-bw');
   if(bwEl)bwEl.textContent=latestBW?(latestBW.weight%1===0?parseInt(latestBW.weight):parseFloat(latestBW.weight).toFixed(1)):'—';
 
+  /* Sleep score — today's entry */
+  const sleepEl=document.getElementById('dash-sleep');
+  if(sleepEl){
+    const sv=pGetSleep(todayKey);
+    sleepEl.textContent=sv!==null?sv:'—';
+    sleepEl.style.color=sv!==null?(sv>=70?'var(--green)':sv>=50?'var(--amber)':'var(--red)'):'var(--muted)';
+  }
+
   /* NY open — live countdown */
   const nyEl=document.getElementById('dash-nyopen');
   if(nyEl){const ny=dashNYOpen();nyEl.textContent=ny.display;nyEl.nextElementSibling.textContent=ny.sub;}
 
   /* Gym today — uses same GYM map as workout tab */
   const gymEl=document.getElementById('dash-gym');
+  const gymSubEl=document.getElementById('dash-gym-sub');
   if(gymEl){
     const gymStr=GYM[todayDi];
-    gymEl.textContent=gymStr||'Rest / PR Day';
+    const gymNames={0:'Push 💪',1:'Pull 🏋️',2:'Legs 🦵',3:'Upper 🔥',4:'Lower ⚡'};
+    gymEl.textContent=gymStr?gymNames[todayDi]||gymStr:'Rest / PR Day';
     gymEl.style.color=gymStr?'var(--text)':'var(--muted)';
+    if(gymSubEl) gymSubEl.textContent=gymStr?GYM[todayDi]+' day':'recover & grow';
   }
 
   /* Reading protocol */
