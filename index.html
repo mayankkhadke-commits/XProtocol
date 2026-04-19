@@ -640,11 +640,11 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
   </div>
   <div class="mode-row">
     <div class="mode-toggle">
-      <button class="mode-btn active" onclick="setMode('school')" id="btn-school">School day</button>
-      <button class="mode-btn" onclick="setMode('free')" id="btn-free">No school</button>
+      <button class="mode-btn active" onclick="setMode('school')" id="btn-school">School</button>
+      <button class="mode-btn" onclick="setMode('free')" id="btn-free">Free</button>
     </div>
-    <button class="add-task-btn" onclick="ltOpenAdd()"><span style="font-size:15px;line-height:1">+</span> Add task</button>
-    <button class="reset-btn" onclick="resetDay()">Reset day</button>
+    <button class="add-task-btn" onclick="ltOpenAdd()">+ Task</button>
+    <button class="reset-btn" onclick="resetDay()">Reset</button>
   </div>
   <div class="day-tabs" id="l-day-tabs"></div>
   <div id="l-home-note"></div>
@@ -1083,9 +1083,9 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
     <div id="j-compose-imgs" class="j-img-preview"></div>
     <div class="j-save-row" style="margin-top:8px">
       <div style="display:flex;align-items:center;gap:10px">
-        <button class="j-img-add-btn" onclick="document.getElementById('j-img-input').click()" title="Add image">+</button>
+        <button class="j-img-add-btn" onclick="document.getElementById('j-img-input').click()" title="Add image">📷</button>
         <input type="file" id="j-img-input" accept="image/*" multiple style="display:none" onchange="jAddImages(this)">
-        <button class="j-save-btn" onclick="jSave()">Save entry</button>
+        <button class="j-save-btn" onclick="jSave()">Save</button>
         <span class="j-saved-flash" id="j-flash">Saved.</span>
       </div>
       <span class="j-char-count" id="j-chars">0 chars</span>
@@ -1102,15 +1102,20 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
       <span class="j-entries-title">Entries</span>
       <span class="j-count-badge" id="j-count">0</span>
     </div>
-    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+    <div style="display:flex;gap:8px;align-items:center">
       <div class="j-view-toggle">
         <button class="j-view-btn active" id="j-view-list" onclick="jSetView('list',this)" title="List view">☰</button>
         <button class="j-view-btn" id="j-view-grid" onclick="jSetView('grid',this)" title="Grid view">⊞</button>
       </div>
+      <input class="j-search" id="j-search" type="text" placeholder="Search…" oninput="jRender()">
+      <div style="position:relative">
+        <button class="j-export-btn" onclick="jMenuToggle(this)" title="More options">⋯</button>
+        <div id="j-more-menu" style="display:none;position:absolute;right:0;top:32px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:4px;min-width:120px;z-index:50;box-shadow:0 4px 12px rgba(0,0,0,0.08)">
+          <button onclick="document.getElementById('j-import-input').click();jMenuClose()" style="display:block;width:100%;text-align:left;font-family:var(--font-mono);font-size:11px;padding:7px 10px;border:none;background:transparent;color:var(--text);cursor:pointer;border-radius:6px" onmouseover="this.style.background='var(--bg)'" onmouseout="this.style.background='transparent'">Import</button>
+          <button onclick="jExport();jMenuClose()" style="display:block;width:100%;text-align:left;font-family:var(--font-mono);font-size:11px;padding:7px 10px;border:none;background:transparent;color:var(--text);cursor:pointer;border-radius:6px" onmouseover="this.style.background='var(--bg)'" onmouseout="this.style.background='transparent'">Export</button>
+        </div>
+      </div>
       <input type="file" id="j-import-input" accept=".txt,.json" style="display:none" onchange="jImport(this)">
-      <input class="j-search" id="j-search" type="text" placeholder="Search text or date…" oninput="jRender()">
-      <button class="j-import-btn" onclick="document.getElementById('j-import-input').click()">Import</button>
-      <button class="j-export-btn" onclick="jExport()">Export</button>
     </div>
   </div>
   <div id="j-list"></div>
@@ -1176,13 +1181,10 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
         <input class="sleep-score-input" id="pt-sleep" type="number" min="0" max="100" step="1" placeholder="0–100" style="width:72px">
         <span style="font-family:var(--font-mono);font-size:10px;color:var(--muted)">/100</span>
       </div>
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
-        <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase">Note for today</div>
-        <button class="j-delete-btn" onclick="noteExpand()" style="font-size:10px">Expand ↗</button>
-      </div>
-      <textarea class="prog-note-input" id="pt-note" rows="3" placeholder="How did today go?"></textarea>
-      <button class="prog-save-btn" onclick="pSaveToday()">Save today's progress</button>
-      <div class="prog-save-flash" id="prog-save-flash">Saved to history.</div>
+      <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:6px">Note for today</div>
+      <textarea class="prog-note-input" id="pt-note" rows="4" placeholder="How did today go?"></textarea>
+      <button class="prog-save-btn" onclick="pSaveToday()" style="margin-top:8px">Save to history</button>
+      <div class="prog-save-flash" id="prog-save-flash">Saved.</div>
     </div>
   </div>
   <!-- HISTORY sub-panel -->
@@ -1201,13 +1203,10 @@ input[type=range].pr-slider::-webkit-slider-thumb{-webkit-appearance:none;appear
     </div>
     <div id="prog-graph-section" style="display:none">
       <div class="prog-graph-wrap">
-        <div style="display:flex;justify-content:flex-end;margin-bottom:6px">
-          <button class="j-delete-btn" onclick="graphFsOpen()" style="font-size:10px">⛶ Fullscreen</button>
-        </div>
         <canvas class="prog-graph-canvas" id="prog-graph-canvas"></canvas>
       </div>
       <div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);text-align:center;margin-bottom:8px">
-        <span style="color:var(--green)">■</span> Completion % &nbsp; <span style="color:var(--blue)">■</span> Sleep score (×10)
+        <span style="color:var(--green)">■</span> Completion % &nbsp; <span style="color:var(--blue)">■</span> Sleep score
       </div>
     </div>
     <div id="prog-list" class="prog-list"></div>
@@ -1801,9 +1800,78 @@ function jLoad(){
   try{const r=localStorage.getItem(J_KEY);return r?JSON.parse(r):[];}
   catch(e){return[];}
 }
+/* ══ IMAGE STORAGE — IndexedDB (unlimited, no "storage full" ever) ══ */
+let _imgDB=null;
+function imgDBOpen(){
+  if(_imgDB) return Promise.resolve(_imgDB);
+  return new Promise((res,rej)=>{
+    const req=indexedDB.open('mayank_images_v1',1);
+    req.onupgradeneeded=e=>e.target.result.createObjectStore('imgs',{keyPath:'id'});
+    req.onsuccess=e=>{_imgDB=e.target.result;res(_imgDB);};
+    req.onerror=()=>rej(req.error);
+  });
+}
+function imgDBPut(id,dataUrl){
+  return imgDBOpen().then(db=>new Promise((res,rej)=>{
+    const tx=db.transaction('imgs','readwrite');
+    tx.objectStore('imgs').put({id,dataUrl});
+    tx.oncomplete=()=>res();tx.onerror=()=>rej(tx.error);
+  }));
+}
+function imgDBGet(id){
+  return imgDBOpen().then(db=>new Promise((res,rej)=>{
+    const req=db.transaction('imgs').objectStore('imgs').get(id);
+    req.onsuccess=()=>res(req.result?req.result.dataUrl:null);
+    req.onerror=()=>rej(req.error);
+  }));
+}
+function imgDBDelete(id){
+  return imgDBOpen().then(db=>new Promise((res,rej)=>{
+    const tx=db.transaction('imgs','readwrite');
+    tx.objectStore('imgs').delete(id);
+    tx.oncomplete=()=>res();tx.onerror=()=>rej(tx.error);
+  }));
+}
+/* Generate a unique image ID */
+function imgNewId(){return 'img_'+Date.now()+'_'+Math.random().toString(36).slice(2,8);}
+
+/* Resolve an image reference: either a legacy base64 string or an IndexedDB ID */
+function imgResolve(ref){
+  if(!ref) return Promise.resolve(null);
+  /* Legacy: old entries stored full base64 */
+  if(ref.startsWith('data:')) return Promise.resolve(ref);
+  /* New: look up by ID in IndexedDB */
+  return imgDBGet(ref);
+}
+
+/* Render thumbnails into a container, loading from IndexedDB as needed */
+function imgRenderThumbs(container, imageRefs, onClickSrc){
+  if(!container||!imageRefs||!imageRefs.length){container.innerHTML='';return;}
+  container.innerHTML=imageRefs.map((_,i)=>`<div class="j-img-thumb" id="ith-${container.id}-${i}"><img style="width:100%;height:100%;object-fit:cover;opacity:0.3"></div>`).join('');
+  imageRefs.forEach((ref,i)=>{
+    imgResolve(ref).then(src=>{
+      if(!src) return;
+      const thumb=document.getElementById(`ith-${container.id}-${i}`);
+      if(!thumb) return;
+      const img=thumb.querySelector('img');
+      img.src=src;
+      img.style.opacity='1';
+      img.style.cursor='zoom-in';
+      img.onclick=()=>onClickSrc(src);
+    });
+  });
+}
+
+/* Journal entries now store image IDs (not base64). Images live in IndexedDB. */
 function jSave2(entries){
+  /* Only store metadata in localStorage — images are in IndexedDB */
   try{localStorage.setItem(J_KEY,JSON.stringify(entries));}catch(e){
-    alert('Storage full. Export your journal first, then continue.');
+    /* If localStorage is still full, strip old entries' image arrays to make room */
+    try{
+      const slim=entries.map(en=>({...en,images:[]}));
+      localStorage.setItem(J_KEY,JSON.stringify(slim));
+      console.warn('Journal saved without image refs due to storage pressure');
+    }catch(e2){console.error('Journal save failed completely:',e2);}
   }
 }
 
@@ -1817,7 +1885,7 @@ const J_TAG_MAP={
   learning:{label:'Learning',cls:'tag-green'},
 };
 
-/* Pending images for current compose session */
+/* jPendingImgs now holds {id, dataUrl} objects during compose */
 let jPendingImgs=[];
 
 function jAddImages(input){
@@ -1825,8 +1893,16 @@ function jAddImages(input){
   files.forEach(file=>{
     const reader=new FileReader();
     reader.onload=e=>{
-      jPendingImgs.push(e.target.result);
-      jRenderComposeImgs();
+      const dataUrl=e.target.result;
+      const id=imgNewId();
+      /* Store immediately in IndexedDB — no size limit */
+      imgDBPut(id,dataUrl).then(()=>{
+        jPendingImgs.push({id,dataUrl});
+        jRenderComposeImgs();
+      }).catch(err=>{
+        console.error('Image save failed:',err);
+        alert('Could not save image. Please try again.');
+      });
     };
     reader.readAsDataURL(file);
   });
@@ -1836,13 +1912,16 @@ function jAddImages(input){
 function jRenderComposeImgs(){
   const wrap=document.getElementById('j-compose-imgs');
   if(!wrap)return;
-  wrap.innerHTML=jPendingImgs.map((src,i)=>`<div class="j-img-thumb">
-    <img src="${src}">
+  wrap.innerHTML=jPendingImgs.map((img,i)=>`<div class="j-img-thumb">
+    <img src="${img.dataUrl}">
     <button class="j-img-thumb-del" onclick="jRemoveComposeImg(${i})">×</button>
   </div>`).join('');
 }
 
 function jRemoveComposeImg(i){
+  /* Delete from IndexedDB too */
+  const img=jPendingImgs[i];
+  if(img&&img.id) imgDBDelete(img.id).catch(()=>{});
   jPendingImgs.splice(i,1);
   jRenderComposeImgs();
 }
@@ -1856,7 +1935,7 @@ function jSave(){
   const now=new Date();
   const mn=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   const dateStr=`${now.getDate()} ${mn[now.getMonth()]} ${now.getFullYear()} · ${now.getHours().toString().padStart(2,'0')}:${now.getMinutes().toString().padStart(2,'0')}`;
-  entries.unshift({id:Date.now(),title:title||'Untitled',body,tag,date:dateStr,ts:now.getTime(),images:[...jPendingImgs]});
+  entries.unshift({id:Date.now(),title:title||'Untitled',body,tag,date:dateStr,ts:now.getTime(),images:jPendingImgs.map(img=>img.id||img)});
   jSave2(entries);
   document.getElementById('j-title').value='';
   document.getElementById('j-body').value='';
@@ -1871,8 +1950,15 @@ function jSave(){
 
 function jDelete(id){
   if(!confirm('Delete this entry? This cannot be undone.'))return;
-  const entries=jLoad().filter(e=>e.id!==id);
-  jSave2(entries);
+  const all=jLoad();
+  const entry=all.find(e=>e.id===id);
+  /* Clean up images from IndexedDB */
+  if(entry&&entry.images){
+    entry.images.forEach(ref=>{
+      if(ref&&!ref.startsWith('data:')) imgDBDelete(ref).catch(()=>{});
+    });
+  }
+  jSave2(all.filter(e=>e.id!==id));
   jRender();
 }
 
@@ -1883,6 +1969,17 @@ function jToggle(id){
 
 let jEditingId=null;
 let jView='list'; /* 'list' or 'grid' */
+
+function jMenuToggle(btn){
+  const m=document.getElementById('j-more-menu');
+  const open=m.style.display==='block';
+  m.style.display=open?'none':'block';
+  if(!open){
+    const close=e=>{if(!btn.contains(e.target)&&!m.contains(e.target)){m.style.display='none';document.removeEventListener('click',close);}};
+    setTimeout(()=>document.addEventListener('click',close),0);
+  }
+}
+function jMenuClose(){document.getElementById('j-more-menu').style.display='none';}
 
 function jSetView(v, btn){
   jView=v;
@@ -1899,7 +1996,17 @@ function jOpenFullscreen(id){
   document.getElementById('jfs-meta').textContent=e.date+(e.images&&e.images.length?' · '+e.images.length+' image'+(e.images.length>1?'s':''):'');
   document.getElementById('jfs-body').textContent=e.body||'';
   const imgs=document.getElementById('jfs-imgs');
-  imgs.innerHTML=(e.images||[]).map(src=>`<img src="${src}" onclick="imgLightboxOpen('${src.replace(/'/g,"\\'")}')" style="cursor:zoom-in">`).join('');
+  imgs.innerHTML='';
+  (e.images||[]).forEach((ref,i)=>{
+    imgResolve(ref).then(src=>{
+      if(!src) return;
+      const img=document.createElement('img');
+      img.src=src;
+      img.style.cursor='zoom-in';
+      img.onclick=()=>imgLightboxOpen(src);
+      imgs.appendChild(img);
+    });
+  });
   document.getElementById('j-fullscreen-bg').classList.add('open');
   document.querySelector('.top-nav').style.display='none';
 }
@@ -2023,9 +2130,9 @@ const imgCount=(e.images||[]).length;
 const firstImg=imgCount>0?(e.images[0]):’’;
 const preview=(e.body||’’).slice(0,80);
 const coverHtml=firstImg
-?`<img class="j-grid-img" src="${firstImg}" onclick="event.stopPropagation();imgLightboxOpen('${firstImg.replace(/'/g,"\\'")}');" style="cursor:zoom-in">`
+?`<img class="j-grid-img" data-imgref="${firstImg}" style="cursor:zoom-in;opacity:0.3">`
 :`<div class="j-grid-no-img">${tagEmoji[e.tag]||'📝'}</div>`;
-return `<div class="j-grid-card" onclick="jToggle(${e.id});jView==='grid'&&document.getElementById('je-${e.id}')&&document.getElementById('je-${e.id}').scrollIntoView({behavior:'smooth',block:'nearest'})"> ${coverHtml} <div class="j-grid-body"> <div class="j-grid-title">${escHtml(e.title)}</div> ${preview?`<div class="j-grid-preview">${escHtml(preview)}${e.body&&e.body.length>80?’…’:’’}</div>`:''} <div style="display:flex;align-items:center;justify-content:space-between;margin-top:4px"> <div class="j-grid-date">${(e.date||'').split(' · ')[0]}</div> <span class="j-grid-tag tag ${tm.cls}">${tm.label}</span> </div> ${imgCount>1?`<div class="j-grid-date" style="margin-top:2px">🖼 ${imgCount} images</div>`:''} </div> </div> <div class="j-entry" id="je-${e.id}" style="display:none;grid-column:1/-1"> <div class="j-entry-body" style="display:block;padding:14px"> <div id="je-body-${e.id}"><div class="j-entry-text">${escHtml(e.body||'')}</div></div> ${imgCount>0?`<div class="j-img-preview" style="margin-top:10px">${(e.images||[]).slice(0,3).map(src=>`<div class="j-img-thumb"><img src="${src}" onclick="imgLightboxOpen('${src.replace(/'/g,"\\'")}');" style="cursor:zoom-in"></div>`).join(’’)}${imgCount>3?`<div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);display:flex;align-items:center;padding:0 4px">+${imgCount-3} more</div>`:’’}</div>`:''} <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;flex-wrap:wrap;gap:6px"> <div style="display:flex;gap:8px"> <button class="j-delete-btn" onclick="event.stopPropagation();jStartEdit(${e.id},event)">✏ Edit</button> ${imgCount>0?`<button class="j-delete-btn" onclick="event.stopPropagation();jOpenFullscreen(${e.id})">🖼 View images (${imgCount})</button>`:''} </div> <div style="display:flex;gap:8px"> <button class="j-delete-btn" onclick="event.stopPropagation();document.getElementById('je-${e.id}').style.display='none'">✕ Close</button> <button class="j-delete-btn" onclick="event.stopPropagation();jDelete(${e.id})">Delete</button> </div> </div> </div> </div>`;
+return `<div class="j-grid-card" onclick="jToggle(${e.id});jView==='grid'&&document.getElementById('je-${e.id}')&&document.getElementById('je-${e.id}').scrollIntoView({behavior:'smooth',block:'nearest'})"> ${coverHtml} <div class="j-grid-body"> <div class="j-grid-title">${escHtml(e.title)}</div> ${preview?`<div class="j-grid-preview">${escHtml(preview)}${e.body&&e.body.length>80?’…’:’’}</div>`:''} <div style="display:flex;align-items:center;justify-content:space-between;margin-top:4px"> <div class="j-grid-date">${(e.date||'').split(' · ')[0]}</div> <span class="j-grid-tag tag ${tm.cls}">${tm.label}</span> </div> ${imgCount>1?`<div class="j-grid-date" style="margin-top:2px">🖼 ${imgCount} images</div>`:''} </div> </div> <div class="j-entry" id="je-${e.id}" style="display:none;grid-column:1/-1"> <div class="j-entry-body" style="display:block;padding:14px"> <div id="je-body-${e.id}"><div class="j-entry-text">${escHtml(e.body||'')}</div></div> ${imgCount>0?`<div class="j-img-preview" style="margin-top:10px">${(e.images||[]).slice(0,3).map((ref,ti)=>`<div class="j-img-thumb"><img data-imgref="${ref}" data-entryid="${e.id}" data-ti="${ti}" style="cursor:zoom-in;opacity:0.3;width:100%;height:100%;object-fit:cover"></div>`).join(’’)}${imgCount>3?`<div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);display:flex;align-items:center;padding:0 4px">+${imgCount-3} more</div>`:’’}</div>`:''} <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px"> <div style="display:flex;gap:6px"> <button class="j-delete-btn" onclick="event.stopPropagation();jStartEdit(${e.id},event)" title="Edit">✏</button> ${imgCount>0?`<button class="j-delete-btn" onclick="event.stopPropagation();jOpenFullscreen(${e.id})" title="View images">🖼 ${imgCount}</button>`:''} </div> <div style="display:flex;gap:6px"> <button class="j-delete-btn" onclick="event.stopPropagation();document.getElementById('je-${e.id}').style.display='none'" title="Close">✕</button> <button class="j-delete-btn" onclick="event.stopPropagation();jDelete(${e.id})" style="color:var(--red)" title="Delete">🗑</button> </div> </div> </div> </div>`;
 }).join(’’);
 
 ```
@@ -2047,6 +2154,7 @@ list.querySelectorAll('.j-grid-card').forEach((card,idx)=>{
     }
   });
 });
+requestAnimationFrame(jHydrateImages);
 return;
 ```
 
@@ -2057,22 +2165,48 @@ list.className=‘j-list’;
 list.innerHTML=filtered.map(e=>{
 const tm=J_TAG_MAP[e.tag]||J_TAG_MAP.general;
 const imgCount=(e.images||[]).length;
-const imgBadge=imgCount>0?`<span class="j-img-count">${imgCount} img${imgCount>1?'s':''}</span>`:’’;
-return `<div class="j-entry" id="je-${e.id}"> <div class="j-entry-header" onclick="jToggle(${e.id})"> <div class="j-entry-meta"> <div class="j-entry-title">${escHtml(e.title)}</div> <div class="j-entry-date" style="display:flex;align-items:center;gap:6px">${e.date}${imgBadge}</div> </div> <span class="j-entry-tag tag ${tm.cls}">${tm.label}</span> <span class="j-expand-icon">▼</span> </div> <div class="j-entry-body"> <div id="je-body-${e.id}"><div class="j-entry-text">${escHtml(e.body||'')}</div></div> ${imgCount>0?`<div class="j-img-preview" style="margin-top:10px">${(e.images||[]).slice(0,3).map(src=>`<div class="j-img-thumb"><img src="${src}" onclick="imgLightboxOpen('${src.replace(/'/g,"\\'")}');" style="cursor:zoom-in"></div>`).join(’’)}${imgCount>3?`<div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);display:flex;align-items:center;padding:0 4px">+${imgCount-3} more</div>`:’’}</div>`:''} <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;flex-wrap:wrap;gap:6px"> <div style="display:flex;gap:8px"> <button class="j-delete-btn" onclick="event.stopPropagation();jStartEdit(${e.id},event)">✏ Edit</button> ${imgCount>0?`<button class="j-delete-btn" onclick="event.stopPropagation();jOpenFullscreen(${e.id})">🖼 View images (${imgCount})</button>`:''} </div> <button class="j-delete-btn" onclick="event.stopPropagation();jDelete(${e.id})">Delete</button> </div> </div> </div>`;
+const imgBadge=imgCount>0?`<span class="j-img-count">🖼 ${imgCount}</span>`:’’;
+return `<div class="j-entry" id="je-${e.id}"> <div class="j-entry-header" onclick="jToggle(${e.id})"> <div class="j-entry-meta"> <div class="j-entry-title">${escHtml(e.title)}</div> <div class="j-entry-date" style="display:flex;align-items:center;gap:6px">${e.date}${imgBadge}</div> </div> <span class="j-entry-tag tag ${tm.cls}">${tm.label}</span> <span class="j-expand-icon">▼</span> </div> <div class="j-entry-body"> <div id="je-body-${e.id}"><div class="j-entry-text">${escHtml(e.body||'')}</div></div> ${imgCount>0?`<div class="j-img-preview" style="margin-top:10px">${(e.images||[]).slice(0,3).map((ref,ti)=>`<div class="j-img-thumb"><img data-imgref="${ref}" data-entryid="${e.id}" data-ti="${ti}" style="cursor:zoom-in;opacity:0.3;width:100%;height:100%;object-fit:cover"></div>`).join(’’)}${imgCount>3?`<div style="font-family:var(--font-mono);font-size:10px;color:var(--muted);display:flex;align-items:center;padding:0 4px">+${imgCount-3} more</div>`:’’}</div>`:''} <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px"> <div style="display:flex;gap:6px"> <button class="j-delete-btn" onclick="event.stopPropagation();jStartEdit(${e.id},event)" title="Edit">✏</button> ${imgCount>0?`<button class="j-delete-btn" onclick="event.stopPropagation();jOpenFullscreen(${e.id})" title="View images">🖼 ${imgCount}</button>`:''} </div> <button class="j-delete-btn" onclick="event.stopPropagation();jDelete(${e.id})" style="color:var(--red)" title="Delete">🗑</button> </div> </div> </div>`;
 }).join(’’);
+requestAnimationFrame(jHydrateImages);
 }
 
 function escHtml(s){return(s||’’).replace(/&/g,’&’).replace(/</g,’<’).replace(/>/g,’>’).replace(/”/g,’"’);}
 
+/* After any journal render, resolve all data-imgref attributes to real src values */
+function jHydrateImages(){
+document.querySelectorAll(‘img[data-imgref]’).forEach(img=>{
+const ref=img.getAttribute(‘data-imgref’);
+if(!ref||img._resolving) return;
+img._resolving=true;
+imgResolve(ref).then(src=>{
+if(src){
+img.src=src;
+img.style.opacity=‘1’;
+/* Wire up click to open lightbox */
+img.onclick=img.onclick||(e=>{e.stopPropagation();imgLightboxOpen(src);});
+}
+img.removeAttribute(‘data-imgref’);
+}).catch(()=>{img.style.opacity=‘0.2’;});
+});
+}
+
 function jExport(){
 const entries=jLoad();
 if(entries.length===0){alert(‘No entries to export.’);return;}
-/* Export as JSON so all fields (images, tags, timestamps) are preserved on import */
-const blob=new Blob([JSON.stringify(entries,null,2)],{type:‘application/json’});
+/* Resolve all image IDs to base64 for a fully portable export */
+const resolveEntry=entry=>{
+if(!entry.images||!entry.images.length) return Promise.resolve(entry);
+return Promise.all(entry.images.map(ref=>imgResolve(ref).catch(()=>ref)))
+.then(resolved=>({…entry,images:resolved.filter(Boolean)}));
+};
+Promise.all(entries.map(resolveEntry)).then(full=>{
+const blob=new Blob([JSON.stringify(full,null,2)],{type:‘application/json’});
 const url=URL.createObjectURL(blob);
 const a=document.createElement(‘a’);
 a.href=url;a.download=‘mayank_journal_’+Date.now()+’.json’;a.click();
 URL.revokeObjectURL(url);
+});
 }
 
 function jImport(input){
@@ -2084,12 +2218,9 @@ try{
 const text=e.target.result.trim();
 let imported=[];
 if(text.startsWith(’[’)||text.startsWith(’{’)){
-/* JSON format */
 const parsed=JSON.parse(text);
 imported=Array.isArray(parsed)?parsed:[parsed];
-/* Validate minimal shape */
 imported=imported.filter(entry=>entry&&(entry.id||entry.title||entry.body));
-/* Ensure required fields */
 imported=imported.map(entry=>({
 id:entry.id||Date.now()+Math.random(),
 title:entry.title||‘Untitled’,
@@ -2104,14 +2235,24 @@ alert(‘Import failed: only JSON format (exported from this app) is supported.�
 input.value=’’;return;
 }
 if(imported.length===0){alert(‘No valid entries found in file.’);input.value=’’;return;}
-/* Merge: keep existing, add imported entries not already present by id */
+/* Move any base64 images into IndexedDB, replace with IDs */
+const migrateEntry=entry=>{
+if(!entry.images||!entry.images.length) return Promise.resolve(entry);
+return Promise.all(entry.images.map(ref=>{
+if(!ref||!ref.startsWith(‘data:’)) return Promise.resolve(ref); /* already an ID */
+const id=imgNewId();
+return imgDBPut(id,ref).then(()=>id).catch(()=>ref);
+})).then(ids=>({…entry,images:ids}));
+};
+Promise.all(imported.map(migrateEntry)).then(migrated=>{
 const existing=jLoad();
 const existingIds=new Set(existing.map(e=>String(e.id)));
-const toAdd=imported.filter(e=>!existingIds.has(String(e.id)));
+const toAdd=migrated.filter(e=>!existingIds.has(String(e.id)));
 const merged=[…existing,…toAdd].sort((a,b)=>b.ts-a.ts);
 jSave2(merged);
 jRender();
 alert(`Imported ${toAdd.length} new entr${toAdd.length===1?'y':'ies'}. ${imported.length-toAdd.length} duplicate(s) skipped.`);
+});
 } catch(err){
 alert(‘Import failed: could not parse file. Make sure it is a valid JSON export from this app.\n\n’+err.message);
 }
