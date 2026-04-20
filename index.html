@@ -1769,7 +1769,7 @@ function lRender(){
     const note=(!isCustom&&!b._hasOverride&&b.note)?`<div class="lnote">${b.note}</div>`:'';
     const badge=isCustom
       ?`<span style="font-family:var(--font-mono);font-size:9px;padding:1px 5px;border-radius:6px;background:var(--purple-bg);color:var(--purple);margin-left:4px">custom</span>`
-      :b._hasOverride?`<span style="font-family:var(--font-mono);font-size:9px;padding:1px 5px;border-radius:6px;background:var(--amber-bg);color:var(--amber);margin-left:4px">edited</span>`:'';
+      :b._hasOverride?'':'';
 
     return `<div class="lblock${isDone?' done-block':''}" data-lidx="${editId}">
       <div class="lblock-header" onclick="lToggleBlock('${editId}')">
